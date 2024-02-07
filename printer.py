@@ -30,6 +30,17 @@ def get_default_printer():
     default_printer_name = default_printer_info.split(',')[0]
     return default_printer_name
 
+def close_adobe_acrobat():
+    # Specify the name of the process to be terminated
+    process_name = "Acrobat.exe"  # Adjust this based on your Adobe Acrobat version
+
+    try:
+        # Use taskkill to terminate the process
+        subprocess.run(['taskkill', '/F', '/IM', process_name], check=True)
+        print(f"Adobe Acrobat process '{process_name}' terminated successfully.")
+    except subprocess.CalledProcessError:
+        print(f"Failed to terminate Adobe Acrobat process '{process_name}'.")
+
 def print_pdf(pdf_content, output_file="output.pdf"):
     with open(output_file, "wb") as pdf_file:
         pdf_file.write(pdf_content)
@@ -43,7 +54,7 @@ def print_pdf(pdf_content, output_file="output.pdf"):
     time.sleep(10)
 
     # Kill the print process
-    pdf_printer.kill_print_process()
+    close_adobe_acrobat()
 
 if __name__ == "__main__":
     # For testing the print_pdf function independently
