@@ -36,7 +36,7 @@ def print_pdf(pdf_content, output_file="output.pdf"):
 
     default_printer = get_default_printer()
     # Start the printing process with Adobe Acrobat
-    acrobat_path = r'C:\Program Files (x86)\Adobe\Acrobat 11.0\Acrobat\Acrobat.exe'  # Adjust the path as needed
+    acrobat_path = r'C:\Program Files\Adobe\Acrobat DC\Acrobat\Acrobat.exe'  # Adjust the path as needed
     pdf_printer = PDFPrinter(acrobat_path)
     pdf_printer.print_pdf_with_acrobat(output_file, default_printer)  # Replace with your printer name
     # Allow time for printing
