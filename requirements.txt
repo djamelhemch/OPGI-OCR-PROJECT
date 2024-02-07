@@ -1,0 +1,6 @@
+opencv-python
+pytesseract
+reportlab
+pywin32
+pybidi
+arabic_reshaper
