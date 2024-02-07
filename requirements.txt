@@ -2,5 +2,5 @@ opencv-python
 pytesseract
 reportlab
 pywin32
-pybidi
+python-bidi
 arabic_reshaper
